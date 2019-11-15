@@ -32,4 +32,7 @@ My DIY garden 🏡 for homegrown organic software projects.  🍇 🍌 🍈 🍉
 
 ## Reference:
 
-https://github.com/bradfitz/homelab
+1. This lab is awsome! https://github.com/bradfitz/homelab
+2. Lab ideas : https://b3n.org/homelab-ideas/
+3. Network Diagram: https://github.com/zimmertr/Network-Diagram
+
