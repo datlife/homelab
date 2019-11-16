@@ -41,3 +41,4 @@
 2. Lab ideas : https://b3n.org/homelab-ideas/
 3. Network Diagram: https://github.com/zimmertr/Network-Diagram
 4. Hyper-converged Proxmox + Ceph Cluster : https://pve.proxmox.com/pve-docs/chapter-pveceph.html
+5. Storage Option: https://chris-sanders.github.io/2018-01-29-single-node-ceph/
