@@ -1,9 +1,9 @@
 # Happy Garden HomeLab
 
-My DIY garden 🏡 for homegrown organic software projects.  🍇 🍌 🍈 🍉 🍊 🍋.
-
+🏡 - My garden for homegrown organic software projects. 🍇🍌🍈🍉🍊🍋.
 
 ## Motivation
+
 * For fun.
 * To understand Infrastructure behind my code.
 
@@ -25,6 +25,11 @@ My DIY garden 🏡 for homegrown organic software projects.  🍇 🍌 🍈 🍉
 
 ## Setup
 
+### Hardware
+
+### Software
+* Install Proxmox.
+* 
 
 ## Build LOG(s)
 
