@@ -1,0 +1,9 @@
+# This Ansible role is responsible for configuring a newly installed Proxmox VE.
+
+---
+- name: Configure non-enterprise PVE
+  block:
+    import_tasks: non_enterprise.yml
+  when: disable_enterprise
+
+- import_tasks: kernel_updates.yml

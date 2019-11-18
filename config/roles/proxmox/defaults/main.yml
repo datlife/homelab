@@ -1,0 +1,5 @@
+---
+disable_enterprise: true
+pve_remove_old_kernels: false
+pve_reboot_on_kernel_update: true
+...
