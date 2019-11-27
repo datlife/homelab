@@ -12,6 +12,7 @@
 ### Network Diagram
 
 ### Hardware
+
 * ISP: Comcast
 * Router: 
 * Switch:
@@ -21,14 +22,23 @@
 * Soil (hypervisor): One of {Proxmox VE, VMWare ESXi, Hyper-V}.
 * Equipments (automation tools): Ansible
 * Seeds: K8s, Docker
-* Fruits: 
+* Fruits: juicy software products <3
 
 ## Setup
 
-### Hardware
+### Bare metal setup
+* This is the fun, yet could-be-expensive part. I had to discipline my emotion to not overspend on latest flashy CPU / GPU. As of the end of 2019, here are the spec for my baremetal. It is indeed similar to a gaming PC. So what? It's my garden ;).
+ 
+| Type      |Model                        |Spec                     | Comment                   |
+|:----------|:----------------------------|:------------------------|:--------------------------|
+| CPU       | AMD Ryzen 2700x             | 3.7 GHz 8-core 16-thread|                           |
+| RAM       | Patriot 32GB DDR4           | 2x16GB DDR4 3200Hz      | Upgrade to 64Gb if needed |
+| DISK      | Samsung 970 EVO+ 512GB SSD  | Read/Write ~3GB/s       | Planning to use Ceph      |
+
 
 ### Software
 * Install Proxmox.
+* Automate config using Ansible
 * 
 
 ## Build LOG(s)
