@@ -31,7 +31,7 @@
  
 | Type      |Model                        |Spec                     | Comment                   |
 |:----------|:----------------------------|:------------------------|:--------------------------|
-| CPU       | AMD Ryzen 2700x             | 3.7 GHz 8-core 16-thread|                           |
+| CPU       | AMD Ryzen 2700x             | 3.7 GHz 8-core 16-thread| O.C. to 4.0Ghz            |
 | RAM       | Patriot 64GB DDR4           | 4x16GB DDR4 3200Hz      | ~~Upgrade to 64Gb if needed~~ <p color="red">Done</p> |
 | DISK      | Samsung 970 EVO+ 512GB SSD  | Read/Write ~3GB/s       | Planning to use Ceph      |
 
