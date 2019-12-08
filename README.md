@@ -13,7 +13,7 @@
 
 ### Hardware
 
-* ISP: Comcast
+* ISP: Comcast - Xfiniti
 * Router: 
 * Switch:
 * Physical Server:
@@ -32,7 +32,7 @@
 | Type      |Model                        |Spec                     | Comment                   |
 |:----------|:----------------------------|:------------------------|:--------------------------|
 | CPU       | AMD Ryzen 2700x             | 3.7 GHz 8-core 16-thread|                           |
-| RAM       | Patriot 32GB DDR4           | 2x16GB DDR4 3200Hz      | Upgrade to 64Gb if needed |
+| RAM       | Patriot 64GB DDR4           | 4x16GB DDR4 3200Hz      | ~~Upgrade to 64Gb if needed~~ <p color="red">Done</p> |
 | DISK      | Samsung 970 EVO+ 512GB SSD  | Read/Write ~3GB/s       | Planning to use Ceph      |
 
 
