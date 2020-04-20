@@ -1,0 +1,52 @@
+#!/bin/bash
+# iptables firewall.
+#
+# This file should be located at /etc/firewall.bash, and is meant to work with
+# the `geerlingguy.firewall` Ansible role.
+#
+# Common port reference:
+#   22: SSH
+#   25: SMTP
+#   80: HTTP
+#   123: NTP
+#   443: HTTPS
+#   2222: SSH alternate
+#   8080: HTTP alternate
+#
+# @author Jeff Geerling
+
+# No spoofing.
+if [ -e /proc/sys/net/ipv4/conf/all/rp_filter ]
+then
+for filter in /proc/sys/net/ipv4/conf/*/rp_filter
+do
+echo 1 > $filter
+done
+fi
+
+# Set the default rules.
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+
+
+# Accept traffic from loopback interface (localhost).
+iptables -A INPUT -i lo -j ACCEPT
+
+# Accept icmp ping requests.
+iptables -A INPUT -p icmp -j ACCEPT
+
+# Allow NTP traffic for time synchronization.
+iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
+iptables -A INPUT -p udp --sport 123 -j ACCEPT
+
+# Additional custom rules.
+{% for rule in firewall_additional_rules %}
+{{ rule }}
+{% endfor %}
+
+# Allow established connections:
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Log EVERYTHING (ONLY for Debug).
+# iptables -A INPUT -j LOG
