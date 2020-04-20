@@ -1,0 +1,4 @@
+openssh_server_keys:
+  - RSA
+  - ECDSA
+  - ED25519

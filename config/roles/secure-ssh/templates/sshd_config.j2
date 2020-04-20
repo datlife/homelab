@@ -1,0 +1,61 @@
+#
+# {{ ansible_managed }}
+#
+Port 22
+
+Protocol 2
+# HostKeys for protocol version 2
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+
+# Logging
+SyslogFacility AUTH
+LogLevel INFO
+
+# Authentication:
+LoginGraceTime 120
+PermitRootLogin yes
+StrictModes yes
+
+
+KexAlgorithms diffie-hellman-group14-sha1,ecdh-sha2-nistp384
+MACs hmac-sha2-512,hmac-sha2-256
+Ciphers aes256-ctr,aes192-ctr,aes128-ctr
+
+# Specifies whether sshd should ignore the user's ~/.ssh/known_hosts
+IgnoreUserKnownHosts yes
+
+PasswordAuthentication no
+PubkeyAuthentication no
+
+# To enable empty passwords, change to yes (NOT RECOMMENDED)
+PermitEmptyPasswords no
+
+# Change to yes to enable challenge-response passwords (beware issues with
+# some PAM modules and threads)
+ChallengeResponseAuthentication no
+
+# Change to no to disable tunnelled clear text passwords
+PasswordAuthentication no
+
+# GSSAPI options
+GSSAPIAuthentication no
+
+# Specifies whether the password provided by the user for 
+# PasswordAuthentication will be validated through the Kerberos KDC.
+KerberosAuthentication no
+
+X11Forwarding no
+
+#MaxStartups 10:30:60
+#Banner /etc/issue.net
+
+# Note (datlife): For garden project
+# I plan to only allow ssh on my local network
+# Hence, using Match block is away to enable publickey authentication
+# and using password to login.
+Match Address 192.168.0.0/24
+    PubkeyAuthentication yes
+    PasswordAuthentication yes

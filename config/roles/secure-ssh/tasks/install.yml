@@ -1,0 +1,25 @@
+---
+- name: Ensure OpenSSH server is setup
+  apt:
+    name: openssh-server
+    state: present
+
+- name: Configure OpenSSH server on Ubuntu
+  when: ansible_os_family == 'Debian'
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: "{{ item.mode }}"
+  loop:
+    - {src: sshd_config.j2, dest: /etc/ssh/sshd_config, mode: '0600'}
+    # - {src: sshd.sysconfig.j2, dest: /etc/sysconfig/sshd, mode: '0640'}
+  loop_control:
+    label: "{{ item.dest|basename}}"
+  notify:
+    - restart ssh
+
+- name: Ensure OpenSSH is started
+  systemd:
+    state: started
+    name: ssh
+
