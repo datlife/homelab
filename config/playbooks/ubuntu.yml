@@ -1,0 +1,17 @@
+# Configure Proxmox VE
+---
+- hosts: happy_garden
+  gather_facts: true
+  become: true
+  vars:
+    garden_hostname: "happy.garden.lab"
+    # garden_static_ip: 192.168.0.10
+    # garden_gateway: 192.168.0.1
+    # garden_netmask: 255.255.255.0
+  roles:
+    - ../roles/secure-ssh
+  
+  tags:
+    - ssh
+      
+    

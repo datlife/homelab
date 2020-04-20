@@ -9,3 +9,4 @@
     garden_netmask: 255.255.255.0
   roles:
     - role: ../roles/proxmox
+    - roles: ../roles/secure-ssh
