@@ -1,5 +1,10 @@
 Happy Garden uses `Ansible` to automate configuration.
 
+
+## Local Ubuntu setup
+
+
+
 ## Post-setup
 The playbook `post_setup` would config the following tasks once Proxmox is installed on the server:
 * Switch to non-enterprise Proxmox (please seriously consider putting a one-time donation for homelab use).

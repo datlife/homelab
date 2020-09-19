@@ -2,5 +2,5 @@
 - when: install is defined and install|bool
   include: install.yml
 
-- when: uninstall is defined and stop|bool
+- when: stop is defined and stop|bool
   include: uninstall.yml

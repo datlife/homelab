@@ -1,0 +1,6 @@
+---
+- name: Ensure OpenSSH is stopped
+  systemd:
+    state: stopped
+    name: ssh
+
