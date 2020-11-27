@@ -1,0 +1,18 @@
+---
+- hosts: happy_garden
+  gather_facts: true
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: 'Update hostname to /etc/hosts to correct IP address'
+      lineinfile:
+        path: /etc/hosts
+        line: '{{ ansible_default_ipv4.address|default(ansible_all_ipv4_addresses[0]) }} {{ hostvars[item].ansible_fqdn }} {{ hostvars[item].ansible_hostname }}'
+        state: present
+      with_items: "{{ groups['happy_garden'] }}"
+    - name: 'Remove localhost in /etc/hosts'
+      lineinfile:
+        path: /etc/hosts
+        line: '127.0.1.1	{{ hostvars[item].ansible_fqdn }}	{{ hostvars[item].ansible_hostname }}'
+        state: absent
+      with_items: "{{ groups['happy_garden'] }}"

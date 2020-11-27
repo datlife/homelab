@@ -1,3 +1,2 @@
 [happy_garden]
-localhost  ansible_user=root ansible_connection=local
-
+192.168.0.146 fqdn=garden.dat.works hostname=garden
