@@ -1,0 +1,3 @@
+---
+- when: install is defined and install|bool
+  include: install.yml

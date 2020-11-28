@@ -1,0 +1,22 @@
+- name: Install ZSH
+  package:
+    name: zsh
+    state: present
+
+- name: Check if .oh-my-zsh exists
+  stat:
+    path: '{{ansible_env.HOME }}/.oh-my-zsh'
+  register: oh_my_zsh
+
+
+- name: Install Oh my ZSH
+  # Install and load extra plugins
+  shell: |
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  when: oh_my_zsh.stat.exists == False
+
+- name: Load zsh dot file
+  template:
+    src: zshrc.j2
+    dest: '{{ ansible_env.HOME }}/.zshrc'
