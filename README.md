@@ -52,3 +52,4 @@
 3. Network Diagram: https://github.com/zimmertr/Network-Diagram
 4. Hyper-converged Proxmox + Ceph Cluster : https://pve.proxmox.com/pve-docs/chapter-pveceph.html
 5. Storage Option: https://chris-sanders.github.io/2018-01-29-single-node-ceph/
+6. Setup Port mirroting for IDS : https://santosomar.medium.com/security-onion-redhunt-os-proxmox-and-open-vswitch-6d6fbaaf0a51
