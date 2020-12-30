@@ -1,6 +1,6 @@
 # Configure Proxmox VE
 ---
-- hosts: happy_garden
+- hosts: "{{ happy_garden | default('127.0.0.1') }}"
   gather_facts: true
   become: true
   vars:
@@ -13,5 +13,3 @@
   
   tags:
     - ssh
-      
-    

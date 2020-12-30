@@ -58,6 +58,6 @@ X11Forwarding no
 # I plan to only allow ssh on my local network
 # Hence, using Match block is as a way to enable publickey authentication
 # and using password to login.
-Match Address 192.168.0.0/24
+Match Address {{ homelab_subnet }}
     PubkeyAuthentication yes
     PasswordAuthentication yes
