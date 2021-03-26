@@ -61,3 +61,7 @@ X11Forwarding no
 Match Address {{ homelab_subnet }}
     PubkeyAuthentication yes
     PasswordAuthentication yes
+
+Match Address {{ zerotier_subnet }}
+    PubkeyAuthentication yes
+    PasswordAuthentication yes

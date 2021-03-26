@@ -1,15 +1,9 @@
-# Configure Proxmox VE
+# Configure Ubuntu host
 ---
-- hosts: "{{ happy_garden | default('127.0.0.1') }}"
-  gather_facts: true
+- name: Configure ubuntu host
+  hosts: localhost
   become: true
-  vars:
-    garden_hostname: "happy.garden.lab"
-    # garden_static_ip: 192.168.0.10
-    # garden_gateway: 192.168.0.1
-    # garden_netmask: 255.255.255.0
   roles:
     - ../roles/secure-ssh
-  
   tags:
     - ssh
